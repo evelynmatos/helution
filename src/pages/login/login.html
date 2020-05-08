@@ -1,0 +1,32 @@
+<ion-header>
+</ion-header>
+
+<ion-content padding>
+
+  <img src="/assets/imgs/logo.png">
+
+  <ion-item>
+    <ion-label floating><b>Matrícula</b></ion-label>
+    <!--colocar required matricula e password-->
+    <ion-input [(ngModel)]="dadosUsuario.matricula" type="number"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating><b> Senha</b></ion-label>
+    <ion-input [(ngModel)]="dadosUsuario.senha" style="-webkit-text-security: disc;" type="text" pattern="[0-9]" minlength="4"
+      maxlength="10"></ion-input>
+  </ion-item>
+
+ <pre>
+  <ion-item>
+    <ion-label>Lembrar</ion-label>
+    <ion-checkbox color="dark"></ion-checkbox>
+  </ion-item>
+  </pre>
+
+<br>
+  <button ion-button block (click)="login()">ENTRAR</button><br>
+  <button ion-button block (click)="esquecimentoSenha()">ESQUECI MINHA SENHA</button><br>
+  <button ion-button full outline (click)=cadastro()>Cadastro</button>
+
+</ion-content>

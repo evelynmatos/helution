@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Nova Solicitação</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list >
+    <ion-item>
+      <ion-label>Setor</ion-label>
+      <ion-select [(ngModel)]="dadosSolicitacao.setor">
+        <ion-option value="manutencao">Manutenção</ion-option>
+        <ion-option value="limpeza">Limpeza</ion-option>
+        <ion-option value="administrativo">Administrativo</ion-option>
+        <ion-option value="ti">TI</ion-option>
+        <ion-option value="portaria">Portaria</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-list >
+    <ion-item>
+      <ion-label>Local</ion-label>
+      <ion-select [(ngModel)]="dadosSolicitacao.local">
+        <ion-option value="sala">Sala</ion-option>
+        <ion-option value="laboratorio">Laboratório</ion-option>
+        <ion-option value="estacionamento">Estacionamento</ion-option>
+        <ion-option value="banheiro">Banheiro</ion-option>
+        <ion-option value="patio">Pátio</ion-option>
+        <ion-option value="biblioteca">Biblioteca</ion-option>
+        <ion-option value="refeitorio">Refeitório</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-list >
+    <ion-item>
+      <ion-label>Andar</ion-label>
+      <ion-select [(ngModel)]="dadosSolicitacao.andar">
+        <ion-option value="terreo">Térreo</ion-option>
+        <ion-option value="primeiroAndar">1º andar</ion-option>
+        <ion-option value="segundoAndar">2º andar</ion-option>
+        <ion-option value="terceiroAndar">3º andar</ion-option>
+        <ion-option value="quartoAndar">4º andar</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-item>
+    <ion-label floating><b>Descreva</b></ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+
+  <button ion-button block (click)="anexarFoto()">ANEXAR FOTO</button>
+
+  <img [src]="img" >
+  <ul>
+    <ion-icon (click)="anexarFoto('foto')" name="camera"></ion-icon>
+    <ion-icon (click)="anexarFoto()" style=text-align:left; name="photos"></ion-icon>
+  </ul>
+
+  <button ion-button block (click)="enviarSolicitacao()">ENVIAR SOLICITAÇÃO</button>
+
+</ion-content>

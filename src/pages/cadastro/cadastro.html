@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Cadastro</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-icon name="contact"></ion-icon>
+
+  <ion-list >
+    <ion-item>
+      <ion-label>O que vc é?</ion-label>
+      <ion-select [(ngModel)]="tipoUsuario" class=opcoes (ionChange)="habilitarCampos(tipoUsuario)">dadosUsuario.opcoes(0)}}
+        <ion-option value="aluno">{{dadosUsuario.opcoes[0]}}</ion-option>
+        <ion-option value="gestor">{{dadosUsuario.opcoes[1]}}</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-item>
+    <ion-label floating><b>Matricula</b></ion-label>
+    <ion-input type="text" required class="matricula">{{dadosUsuario.matricula}}</ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating><b>Email</b></ion-label>
+    <ion-input type="text" required class="email">{{dadosUsuario.email}}</ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating><b>Telefone</b></ion-label>
+    <ion-input type="tel" required class="telefone">{{dadosUsuario.telefone}}</ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating><b>Senha</b></ion-label>
+    <ion-input type="text" required class="senha">{{dadosUsuario.senha}}</ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating><b>Confirmar senha</b></ion-label>
+    <ion-input type="text" required class="confirmarSenha">{{dadosUsuario.confirmarSenha}}</ion-input>
+  </ion-item>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Setor</ion-label>
+        <ion-select id="setor" [disabled]="habilitar">
+        <ion-option value="manutencao">Manutenção</ion-option>
+        <ion-option value="diretoria">Diretoria</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button block (click)="cadastrar()">CADASTRAR</button>
+  <button ion-button block (click)="login()">Já tem uma conta? Entrar</button>
+
+
+</ion-content>

@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Esqueci minha Senha</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label floating><b>Matrícula</b></ion-label>
+    <ion-input #matricula id="matricula" type="number" required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating><b>Email</b></ion-label>
+    <ion-input #email id="email" type="text" required></ion-input>
+  </ion-item>
+
+  <button ion-button block (click)="enviarEsquecimento()">ENVIAR</button>
+  <button ion-button block (click)="cancelarEsquecimento()">CANCELAR</button>
+
+</ion-content>
