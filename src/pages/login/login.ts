@@ -12,9 +12,13 @@ import { MinhasSolicitacoesPage } from '../minhas-solicitacoes/minhas-solicitaco
 export class LoginPage {
 
   dadosUsuario = {
-    matricula: '9999',
-    senha: '12345',
+    matricula: '',
+    senha: '',
   };
+
+  /*desabilitarBotao = true;
+
+  habilitarBotao: boolean = false;*/
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }

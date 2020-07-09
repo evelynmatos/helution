@@ -15,6 +15,10 @@ import { EsquecimentoSenhaPageModule } from '../pages/esquecimento-senha/esqueci
 import { AlterarPerfilPageModule } from '../pages/alterar-perfil/alterar-perfil.module';
 import { AlterarSenhaPageModule } from '../pages/alterar-senha/alterar-senha.module';
 import { HistoricoSolicitacoesPageModule } from '../pages/historico-solicitacoes/historico-solicitacoes.module';
+import { FuncoesProvider } from '../providers/funcoes/funcoes';
+import { CameraService } from '../providers/camera/camera-service';
+import { SolicitacoesProvider } from '../providers/solicitacoes/solicitacoes';
+
 
 @NgModule({
   declarations: [
@@ -43,8 +47,11 @@ import { HistoricoSolicitacoesPageModule } from '../pages/historico-solicitacoes
   providers: [
     StatusBar,
     SplashScreen,
-
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    FuncoesProvider,
+    CameraService,
+    SolicitacoesProvider,
   ]
 })
 export class AppModule {}

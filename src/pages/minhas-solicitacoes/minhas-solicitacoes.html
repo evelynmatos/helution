@@ -1,17 +1,13 @@
 <ion-header>
-
   <ion-navbar>
-      <button ion-button icon-only menuToggle>
-      <ion-icon name="menu"></ion-icon>
-      </button>
-
     <ion-title>Minhas Solicitações</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 <ion-content padding>
-  <p>
-    Minhas Solicitações
-  </p>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div *ngIf="list.length != null"></div>
+
 </ion-content>

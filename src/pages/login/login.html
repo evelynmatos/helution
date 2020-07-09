@@ -2,31 +2,34 @@
 </ion-header>
 
 <ion-content padding>
-
-  <img src="/assets/imgs/logo.png">
-
+  <div class="bg"></div>
+  <div align= "center">
+    <img src="../../assets/imgs/logo.png">
+  </div> 
   <ion-item>
-    <ion-label floating><b>Matrícula</b></ion-label>
-    <!--colocar required matricula e password-->
-    <ion-input [(ngModel)]="dadosUsuario.matricula" type="number"></ion-input>
+    <ion-label floating>
+      <ion-icon name="mail" item-start class="text-white"></ion-icon>
+      Matrícula
+    </ion-label>
+    <!--colocar required matricula e password // disabled]="dadosUsuario.matricula.length < 5 || dadosUsuario.senha.length < 5"-->
+    <ion-input [(ngModel)]="dadosUsuario.matricula" type="text" minlength="5" maxlength="10"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label floating><b> Senha</b></ion-label>
-    <ion-input [(ngModel)]="dadosUsuario.senha" style="-webkit-text-security: disc;" type="text" pattern="[0-9]" minlength="4"
+    <ion-label floating> 
+      <ion-icon name="lock" item-start class="text-white"></ion-icon>
+      Senha
+    </ion-label>
+    <ion-input [(ngModel)]="dadosUsuario.senha" type="text" pattern="[0-9]" inputmode="numeric" minlength="4"
       maxlength="10"></ion-input>
-  </ion-item>
+  </ion-item><br>
 
- <pre>
-  <ion-item>
-    <ion-label>Lembrar</ion-label>
-    <ion-checkbox color="dark"></ion-checkbox>
-  </ion-item>
-  </pre>
+  <button ion-button icon-start block tappable (click)="login()">
+    <ion-icon name="log-in"></ion-icon>
+    ENTRAR
+  </button>
 
-<br>
-  <button ion-button block (click)="login()">ENTRAR</button><br>
-  <button ion-button block (click)="esquecimentoSenha()">ESQUECI MINHA SENHA</button><br>
-  <button ion-button full outline (click)=cadastro()>Cadastro</button>
+<p text-right ion-text tappable (click)="esquecimentoSenha()"><strong>Esqueceu a senha?</strong></p>
+<p text-center ion-text tappable (click)="cadastro()">Novo aqui?<strong> Cadastre-se</strong></p>
 
 </ion-content>

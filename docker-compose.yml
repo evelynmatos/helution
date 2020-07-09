@@ -1,0 +1,19 @@
+
+version: '3'
+services:
+  ionic: 
+    build: .  
+    restart: always  
+    volumes:
+      - .:/tmp   
+      - /dev/bus/usb:/dev/bus/usb    
+    privileged: true   
+    working_dir: /tmp
+    ports:
+      - "3000:3000" # ng dev server
+      - "5000:5000" # node
+      - "8100:8100" # ionic dev server
+      - "8080:8080" # webpack
+      - "9876:9876" # karma
+      - "35729:35729" # livereload
+    tty: true
